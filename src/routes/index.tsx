@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Alert } from 'react-native';
 import { Button, Menu, Divider, Provider } from 'react-native-paper';
 
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -30,14 +30,17 @@ export const StackRoutes: React.FC = () => {
               },
               headerTintColor: '#fff',
               headerRight: () => (
-                <PopUpNavigator />
-              // <Icon.Button
-              //   name="ellipsis-vertical"
-              //   backgroundColor="#054A29"
-              //   onPress={() => {
-              //     console.log("Entrou para montar");
-
-              //   }} />
+                <View style={{flexDirection: 'row'}}>
+                  <Icon
+                    name= "md-search-outline"
+                    color= "#fff"
+                    size= {22}
+                    style={{marginRight: 25}}
+                    onPress={() => {
+                      Alert.alert("Entrou para buscar");
+                    }} />
+                  <PopUpNavigator />
+                </View>
                ),
             }}
       />

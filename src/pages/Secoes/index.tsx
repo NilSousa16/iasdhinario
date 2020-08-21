@@ -92,6 +92,16 @@ const HINOLIST = [
 
 const Secoes: React.FC = () => {
 
+  const listTemp = HINOLIST.map((data) =>
+    data.section
+  );
+
+  const listSections = [ ...new Set( listTemp ) ];
+
+  console.log(listSections);
+
+  //LIsta com seções de hinos
+
   const renderItem = ({item}) => {
     return (
         <ContainerItem>
